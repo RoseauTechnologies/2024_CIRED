@@ -9,53 +9,40 @@
 \usepgfplotslibrary{groupplots}%
 
 \begin{document}
-  \begin{tikzpicture}[%
+\begin{tikzpicture}[%
     show background rectangle,%
     tight background,%
     background rectangle/.style={fill=white},%
   ]
-    \begin{groupplot}
-      [%
-      group style={group size=1 by 2,
+  \begin{groupplot}
+    [%
+    group style={group size=1 by 2,
       xlabels at=edge bottom,%
       ylabels at=edge left%
-      },%
-      xlabel={Voltages\\(\% of nominal voltage)},%
-      x label style={at={(axis description cs:0.5,-0.1)},anchor=north, align=center},%
-      ylabel={Active power\\(\% of $\smax$)},%
-      y label style={at={(axis description cs:-0.1,0.5)},anchor=south, align=center},%
-      grid=both,%
-      /tikz/line width=0.75mm,%
-      /tikz/font={\Large},
-%      sharp plot,%
-%      mark size=0.5mm,%
-      height=9cm,%
-      width=16cm,%
-      xmin=100,%
-      xmax=110,%
-      xticklabel style={align=center},%
-      xticklabel={%
-        $\pgfmathprintnumber{\tick}$\%%
-      },%
-      yticklabel style={align=center},%
-      yticklabel={%
-        $\pgfmathprintnumber{\tick}$\%%
-      },%
-      ]
-      \nextgroupplot[ylabel={Active power\\(\% of $\smax$)}]
-      \addplot+ coordinates {(100,100) (106.3,100) (108.5,0) (110,0)};%
-      \draw[magenta] (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymax});%
-      \draw[magenta] (axis cs:108.5,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:108.5,\pgfkeysvalueof{/pgfplots/ymax});%
-      \node[text=magenta, left] at (axis cs:106.3,0) {$U_{\text{P}}^{\text{up}}$};%
-      \node[text=magenta, left] at (axis cs:108.5,0) {$U_{\text{P}}^{\max}$};%
-      \nextgroupplot[ylabel={Reactive power\\(\% of $\smax$)}]
-      \addplot+ coordinates {(100,0) (104.1,0) (106.3,100) (110,100)};%
-      \draw[magenta] (axis cs:104.1,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:104.1,\pgfkeysvalueof{/pgfplots/ymax});%
-      \draw[magenta] (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymax});%
-      \node[text=magenta, left] at (axis cs:104.1,100) {$U_{\text{Q}}^{\text{up}}$};%
-      \node[text=magenta, left] at (axis cs:106.3,100) {$U_{\text{Q}}^{\max}$};%
-    \end{groupplot}
-  \end{tikzpicture}
+    },%
+    xlabel={Voltages\\(\% of nominal voltage)},%
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north, align=center},%
+    ylabel={Active power\\(\% of $\smax$)},%
+    y label style={at={(axis description cs:-0.1,0.5)},anchor=south, align=center},%
+    grid=both,%
+    /tikz/line width=0.75mm,%
+    /tikz/font={\Large},
+    %      sharp plot,%
+    %      mark size=0.5mm,%
+    height=9cm,width=16cm,xmin=100,xmax=110,xticklabel
+    style={align=center},xticklabel={$\pgfmathprintnumber{\tick}$\%},yticklabel
+    style={align=center},yticklabel={$\pgfmathprintnumber{\tick}$\%},] \nextgroupplot[ylabel={Active power\\(\% of
+        $\smax$)}] \addplot+ coordinates {(100,100) (106.3,100) (108.5,0) (110,0)};\draw[magenta] (axis
+    cs:106.3,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymax});\draw[magenta] (axis
+    cs:108.5,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:108.5,\pgfkeysvalueof{/pgfplots/ymax});\node[text=magenta, left]
+    at (axis cs:106.3,0) {$U_{\text{P}}^{\text{up}}$};\node[text=magenta, left] at (axis cs:108.5,0)
+    {$U_{\text{P}}^{\max}$};\nextgroupplot[ylabel={Reactive power\\(\% of $\smax$)}] \addplot+ coordinates {(100,0)
+        (104.1,0) (106.3,100) (110,100)};\draw[magenta] (axis cs:104.1,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis
+    cs:104.1,\pgfkeysvalueof{/pgfplots/ymax});\draw[magenta] (axis cs:106.3,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis
+    cs:106.3,\pgfkeysvalueof{/pgfplots/ymax});\node[text=magenta, left] at (axis cs:104.1,100)
+    {$U_{\text{Q}}^{\text{up}}$};\node[text=magenta, left] at (axis cs:106.3,100) {$U_{\text{Q}}^{\max}$};%%%%%%%%%%%%%%%%%%%%%%
+  \end{groupplot}
+\end{tikzpicture}
 \end{document}
 % Local Variables:
 % mode: latex
