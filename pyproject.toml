@@ -1,0 +1,30 @@
+[tool.poetry]
+package-mode = false # https://python-poetry.org/docs/basic-usage/#operating-modes
+
+[tool.poetry.dependencies]
+python = "^3.10"
+roseau-load-flow = ">=0.8.0"
+matplotlib = ">=3.8.0"
+seaborn = ">=0.13.2"
+jupyter = ">=1.0.0"
+tables = ">=3.9.2"
+python-dotenv = "^1.0.1"
+folium = ">=0.16.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.0.0"
+ruff = ">=0.3.3"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+show-fixes = true
+extend-include = ["*.ipynb"]
+
+[tool.ruff.format]
+preview=true
+
+[tool.ruff.lint]
+extend-select = ["W", "B", "UP", "I", "RUF100", "TID", "C4", "T10"]
+extend-ignore = ["UP038"]
+unfixable = ["B"]

@@ -585,8 +585,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+.env/
+.venv/
 env/
 venv/
 ENV/
@@ -682,3 +682,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/linux,windows,emacs,latex,python,visualstudiocode,pycharm+all
 
 Article/Figures/*.pdf
+results/
+node_modules/
